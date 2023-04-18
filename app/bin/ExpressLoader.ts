@@ -1,6 +1,6 @@
-import express, { Express, Request, Response } from 'express';
+import express, { Express } from 'express';
 import routes from "../routes";
-const config = require('../config');
+import config from "./../config";
 
 export default class ExpressLoader {
     app: Express;
