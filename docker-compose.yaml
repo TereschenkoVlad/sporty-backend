@@ -1,0 +1,27 @@
+version: "3.6"
+services:
+  web:
+    image: node:18.16
+    build: .
+    working_dir: /var/www/backend
+    command: npm run dev
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/backend
+    links:
+      - mongodb
+
+  mongodb:
+    image: mongo:6.0
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: secret
+      MONGO_INITDB_ROOT_USERNAME: admin
+    volumes:
+      - /var/www/mongodb/data/:/data/db/
+    ports:
+      - "27017:27017"
+
+volumes:
+  node_modules:
