@@ -1,4 +1,5 @@
 import express, { Express, Request, Response } from 'express';
+import routes from "../routes";
 const config = require('../config');
 
 export default class ExpressLoader {
@@ -11,9 +12,7 @@ export default class ExpressLoader {
     }
 
     start() {
-        this.app.get('/', (req: Request, res: Response) => {
-            res.send('🏠 Home, sweet home ...');
-        });
+        routes(this.app);
 
         this.app.listen(this.port, () => {
             console.log(`⚡️[server]: Server is running at http://localhost:${this.port}`);
