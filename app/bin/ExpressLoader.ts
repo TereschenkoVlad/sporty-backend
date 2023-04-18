@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from 'express';
 const config = require('../config');
 
-class ExpressLoader {
+export default class ExpressLoader {
     app: Express;
     port: string;
 
@@ -20,5 +20,3 @@ class ExpressLoader {
         });
     }
 }
-
-module.exports = ExpressLoader;
