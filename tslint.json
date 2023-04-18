@@ -6,7 +6,8 @@
   "jsRules": {},
   "rules": {
     "indent": [ true, "spaces" ],
-    "trailing-comma": [ true ]
+    "trailing-comma": [ true ],
+    "no-console": false
   },
   "rulesDirectory": []
 }
