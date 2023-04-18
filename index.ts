@@ -1,5 +1,5 @@
-import ExpressLoader = require('app/bin/ExpressLoader');
+const ExpressLoader = require('./app/bin/ExpressLoader');
 
-const loader: ExpressLoader = new ExpressLoader();
+const loader = new ExpressLoader();
 
 loader.start();

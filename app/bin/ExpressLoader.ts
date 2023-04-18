@@ -1,20 +1,18 @@
 import express, { Express, Request, Response } from 'express';
-import dotenv, { DotenvConfigOutput } from 'dotenv';
+const config = require('../config');
 
 class ExpressLoader {
-    config: DotenvConfigOutput;
     app: Express;
     port: string;
 
     constructor() {
-        this.config = dotenv.config();
         this.app = express();
-        this.port = process.env.PORT;
+        this.port = config.app.port;
     }
 
     start() {
         this.app.get('/', (req: Request, res: Response) => {
-            res.send('Express + TypeScript Server');
+            res.send('🏠 Home, sweet home ...');
         });
 
         this.app.listen(this.port, () => {
