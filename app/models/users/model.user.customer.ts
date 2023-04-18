@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-import {BaseUser, BaseUserInterface} from "./baseUser";
+import {BaseUser, BaseUserInterface} from "./model.user.base";
 import { AddressInterface } from "../../common/interfaces/AddressInterface";
 
-interface CustomerUserInterface extends BaseUserInterface {
+export interface CustomerUserInterface extends BaseUserInterface {
     address: AddressInterface;
     gender: number;
     status: number;
