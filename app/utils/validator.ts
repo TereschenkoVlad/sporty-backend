@@ -1,7 +1,7 @@
 import Validator, {Rules, ValidationErrors} from "validatorjs";
 import config from "../config";
 
-Validator.register('telephone', function (value: string, requirement: string, attribute: string) {
+Validator.register('telephone', (value: string, requirement: string, attribute: string) => {
   return config.twilio.phoneNumberRegEx.test(value);
 }, 'The :attribute is not valid.');
 
@@ -15,6 +15,4 @@ const validateData = (data: object, rules: Rules): ValidationErrors | null => {
   return validation.errors.all();
 }
 
-module.exports = {
-  validateData,
-};
+export { validateData };

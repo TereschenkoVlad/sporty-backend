@@ -3,7 +3,7 @@ import { API_RESOURCE_FACTORIES } from "../../config/registries/apiResourceFacto
 
 export interface IApiResourceFactory {
   createSingle(object: object, apiResourceClass: IApiResource): ApiResource;
-  createMultiple(objects: object[], apiResourceClass: IApiResource): Array<any>;
+  createMultiple(objects: object[], apiResourceClass: IApiResource): [];
   support(object: object, apiResourceClass: IApiResource): boolean;
 }
 

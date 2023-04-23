@@ -4,8 +4,9 @@ import { Rules } from "validatorjs";
 import { createCustomer } from "../../services/user/service.user.customer";
 import ApiResponse from "../../features/api/ApiResponse";
 import {BaseCustomerApiResourceFactory} from "../../features/customer/apiResources/BaseCustomerApiResourceFactory";
+import {Request, Response, NextFunction} from "express";
 
-export const customerRegister = async (req, res, next) => {
+const customerRegister = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const rules: Rules = {
             firstName: 'required|min:3|max:40',
@@ -35,3 +36,5 @@ export const customerRegister = async (req, res, next) => {
         next(e)
     }
 }
+
+export { customerRegister };

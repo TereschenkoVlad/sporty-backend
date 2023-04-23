@@ -33,7 +33,7 @@ class NotAuthorizedError extends HttpError {
   }
 }
 
-module.exports = {
+export {
   HttpError,
   ValidationError,
   NotAuthorizedError,

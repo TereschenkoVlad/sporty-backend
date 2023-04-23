@@ -1,4 +1,6 @@
-export interface IApiResource {}
+export interface IApiResource {
+  constructor(): void;
+}
 
 export class ApiResource {
   item: IApiResource;

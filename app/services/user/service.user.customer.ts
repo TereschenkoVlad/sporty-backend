@@ -14,7 +14,7 @@ interface CreateCustomerData  {
     phoneNumber: string;
 }
 
-const createCustomer = async (data: CreateCustomerData): Promise<Customer>  => {
+export const createCustomer = async (data: CreateCustomerData): Promise<Customer>  => {
     const customer: HydratedDocument<CustomerUserInterface> = new Customer({
         ...data,
         status: CUSTOMER_ACTIVE_STATUS,
@@ -25,8 +25,4 @@ const createCustomer = async (data: CreateCustomerData): Promise<Customer>  => {
     });
 
     return customer.save();
-};
-
-module.exports = {
-    createCustomer,
 };

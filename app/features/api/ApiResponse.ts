@@ -23,8 +23,4 @@ export default class ApiResponse {
       data,
     });
   }
-
-  async sendPaginatedResponse({}) {
-
-  }
 }
